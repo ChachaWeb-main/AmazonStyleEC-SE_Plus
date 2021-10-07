@@ -14,3 +14,7 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+/*Route::resourceを使うことで、CRUD用のURLを一度に定義することができる。
+第一引数にベースとなるURLを文字列で渡し、第二引数で使用するコントローラを指定する。*/
+Route::resource('products', 'ProductController');
