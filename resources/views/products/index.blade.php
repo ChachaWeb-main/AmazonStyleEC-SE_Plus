@@ -12,7 +12,7 @@
                     </a>
                     <div class="row">
                         <div class="col-12">
-                            <p class="samazon-product-label mt-2">
+                            <p class="mymazon-product-label mt-2">
                                 {{$product->name}}<br>
                                 <label>￥{{$product->price}}</label>
                             </p>
