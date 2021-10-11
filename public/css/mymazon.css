@@ -92,7 +92,7 @@ label {
 }
 
 
-
+/* header */
 .mymazon-login-input {
     border-radius: 2px;
     border: solid 1px #b2b2b2;
@@ -148,4 +148,30 @@ label {
     line-height: normal;
     letter-spacing: normal;
     color: #0fbe9f;
+}
+
+
+.mymazon-header-container {
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+}
+
+.mymazon-header-search-input {
+    border: solid 1px #e5e5e5;
+}
+
+.mymazon-header-search-button {
+    background-color: #0fbe9f;
+}
+
+.mymazon-header-search-icon {
+    color: #ffffff;
+}
+
+.mymazon-header-fav-icon {
+    color: #191919;
+}
+
+.mymazon-header-shoppingcart-icon {
+    color: #ffffff;
 }
