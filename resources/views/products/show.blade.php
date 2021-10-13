@@ -36,13 +36,13 @@
                 <input type="hidden" name="weight" value="0">
                 <div class="row">
                     <div class="col-7">
-                        <button type="submit" class="btn samazon-submit-button w-100">
+                        <button type="submit" class="btn mymazon-submit-button w-100">
                             <i class="fas fa-shopping-cart"></i>
                             カートに追加
                         </button>
                     </div>
                     <div class="col-5">
-                        <a href="/products/{{ $product->id }}/favorite" class="btn samazon-favorite-button text-dark w-100">
+                        <a href="/products/{{ $product->id }}/favorite" class="btn mymazon-favorite-button text-dark w-100">
                             <i class="fa fa-heart"></i>
                             お気に入り
                         </a>
@@ -58,7 +58,28 @@
         </div>
 
         <div class="offset-1 col-10">
-            <!-- レビューを実装する箇所になります -->
+            <!-- レビューを実装箇所 -->
+            <div class="row">
+                <!-- その商品に関しての全てのレビューが$reviewsに保存されており、@foreach を使うことで全てのレビューを表示させる -->
+                @foreach($reviews as $review)
+                <div class="offset-md-5 col-md-5">
+                    <p class="h3">{{$review->content}}</p>
+                    <label>{{$review->created_at}}</label>
+                </div>
+                @endforeach
+            </div>
+            <!-- ログイン済みかどうかを判定できる @auth を使うことでログインしている状態でのみレビュー用のフォームが画面に表示される-->
+            @auth
+            <div class="row">
+                <div class="offset-md-5 col-md-5">
+                    <form method="POST" action="/products/{{ $product->id }}/reviews">
+                        {{ csrf_field() }}
+                        <textarea name="content" class="form-control m-2"></textarea>
+                        <button type="submit" class="btn mymazon-submit-button ml-2">レビューを追加</button>
+                    </form>
+                </div>
+            </div>
+            @endauth
         </div>
     </div>
 </div>

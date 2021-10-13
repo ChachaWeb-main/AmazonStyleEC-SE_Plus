@@ -66,7 +66,9 @@ class ProductController extends Controller
     
     public function show(Product $product)
     {
-        return view('products.show', compact('product'));
+        $reviews = $product->reviews()->get(); //商品についての全てのレビューを取得して、$reviewsに保存
+
+        return view('products.show', compact('product', 'reviews')); //取得したレビューをcompact関数でビューへ渡す
     }
 
     /**

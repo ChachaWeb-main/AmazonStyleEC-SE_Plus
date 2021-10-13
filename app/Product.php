@@ -10,4 +10,9 @@ class Product extends Model
     {
         return $this->belongsTo('App\Category');
     }
+    
+    public function reviews() //レビューとの紐付け、多数になるため 製品１対 レビュー多 の形に
+    {
+        return $this->hasMany('App\Review');
+    }
 }
