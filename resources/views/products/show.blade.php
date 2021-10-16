@@ -5,7 +5,7 @@
 <div class="d-flex justify-content-center">
     <div class="row w-75">
         <div class="col-5 offset-1">
-            <img src="{{ asset('img/dummy.png')}}" class="w-100 img-fuild">
+            <img src="{{ asset('img/book.jpg')}}" class="w-100 img-fuild">
         </div>
         <div class="col">
             <div class="d-flex flex-column">
@@ -60,7 +60,7 @@
         <div class="offset-1 col-10">
             <!-- レビューを実装箇所 -->
             <div class="row">
-                <!-- その商品に関しての全てのレビューが$reviewsに保存されており、@foreach を使うことで全てのレビューを表示させる -->
+                <!-- その商品に関しての全てのレビューが$reviewsに保存されており、foreach を使うことで全てのレビューを表示させる -->
                 @foreach($reviews as $review)
                 <div class="offset-md-5 col-md-5">
                     <p class="h3">{{$review->content}}</p>
@@ -68,7 +68,7 @@
                 </div>
                 @endforeach
             </div>
-            <!-- ログイン済みかどうかを判定できる @auth を使うことでログインしている状態でのみレビュー用のフォームが画面に表示される-->
+            <!-- ログイン済みかどうかを判定できる auth を使うことでログインしている状態でのみレビュー用のフォームが画面に表示される-->
             @auth
             <div class="row">
                 <div class="offset-md-5 col-md-5">
