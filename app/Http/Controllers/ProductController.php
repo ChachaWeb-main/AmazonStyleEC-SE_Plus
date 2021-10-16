@@ -6,8 +6,6 @@ use App\Product;
 use App\Category;
 use Illuminate\Http\Request;
 
-use Illuminate\Support\Facades\Log;
-
 class ProductController extends Controller
 {
     /**
@@ -69,10 +67,6 @@ class ProductController extends Controller
     public function show(Product $product)
     {
         $reviews = $product->reviews()->get(); //商品についての全てのレビューを取得して、$reviewsに保存
-        
-        Log::debug("-----------------------------");
-        Log::debug($reviews);
-        Log::debug("-----------------------------");
         
         return view('products.show', compact('product', 'reviews')); //取得したレビューをcompact関数でビューへ渡す
     }
