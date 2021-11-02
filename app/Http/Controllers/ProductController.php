@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Product;
 use App\Category;
+use Illuminate\Support\Facades\Auth; //お気に入り機能実装
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
@@ -21,7 +22,24 @@ class ProductController extends Controller
 
         return view('products.index', compact('products')); //compact関数で、変数$productsがビューに渡される。
     }
+    
+    // お気に入り機能実装
+    public function favorite(Product $product)
+    {
+        $user = Auth::user(); //現在のユーザーの情報を$user変数に代入
+        
+        /*$user->hasFavorited($product)で、ユーザーがその商品をお気に入り済みかどうかをチェック。
+          お気に入り済みであれば、お気に入りを外す*/
+        if ($user->hasFavorited($product)) {
+            $user->unfavorite($product);
+        } else {
+            $user->favorite($product);
+        }
 
+        return redirect()->route('products.show', $product); //商品の個別ページへリターン
+    }
+    
+    
     /**
      * Show the form for creating a new resource.
      *

@@ -22,6 +22,8 @@ Route::postでPOSTで使用するルーティングだと分かるようにコ�
 この設定で、商品のIDを元に自動的にデータベースから商品のデータをコントローラに渡すことができる。*/
 Route::post('products/{product}/reviews', 'ReviewController@store');
 
+//お気に入り機能実装
+Route::get('products/{product}/favorite', 'ProductController@favorite')->name('products.favorite');
 /*Route::resourceを使うことで、CRUD用のURLを一度に定義することができる。
 第一引数にベースとなるURLを文字列で渡し、第二引数で使用するコントローラを指定する。*/
 Route::resource('products', 'ProductController');

@@ -7,10 +7,11 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use App\Notifications\CustomVerifyEmail;
 use App\Notifications\CustomResetPassword;
+use Overtrue\LaravelFavorite\Traits\Favoriter; //laravel-favoriteで提供されているお気に入り機能を導入
 
 class User extends Authenticatable implements MustVerifyEmail
 {
-    use Notifiable;
+    use Notifiable, Favoriter; //laravel-favoriteで提供されているお気に入り機能を導入
     
     public function sendEmailVerificationNotification()
     {
