@@ -92,7 +92,7 @@ label {
 }
 
 
-/* header */
+/* login */
 .mymazon-login-input {
     border-radius: 2px;
     border: solid 1px #b2b2b2;
@@ -101,7 +101,7 @@ label {
 
 .mymazon-check-label {
     font-family: YuGo;
-    font-size: 12px;
+    font-size: 13px;
     font-weight: 500;
     font-stretch: normal;
     font-style: normal;
@@ -126,9 +126,15 @@ label {
     color: #ffffff;
 }
 
+
+/* create */
+/**/
+
+
+/* show */
 .mymazon-submit-button {
     font-family: YuGo;
-    font-size: 14px;
+    font-size: 15px;
     font-weight: bold;
     font-stretch: normal;
     font-style: normal;
@@ -136,20 +142,35 @@ label {
     letter-spacing: normal;
     color: #b2b2b2;
     color: #ffffff;
-    background-color: #0fbe9f;
+    background-color: #3399FF;
 }
 
 .mymazon-login-text {
     font-family: YuGo;
-    font-size: 14px;
+    font-size: 15px;
     font-weight: bold;
     font-stretch: normal;
     font-style: normal;
     line-height: normal;
     letter-spacing: normal;
-    color: #0fbe9f;
+    color: #3399FF;
+}
+/**/
+.mymazon-register-text {
+    font-family: YuGo;
+    font-size: 15px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #ffffff;
+    background-color: #0fbe9f; 
+    border-radius: 30px; 
 }
 
+
+/* header */
 .mymazon-header-container {
     box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1);
     background-color: #ffffff;
@@ -160,7 +181,7 @@ label {
 }
 
 .mymazon-header-search-button {
-    background-color: #0fbe9f;
+    background-color: #3399FF;
 }
 
 .mymazon-header-search-icon {
@@ -168,7 +189,7 @@ label {
 }
 
 .mymazon-header-fav-icon {
-    color: #191919;
+    color: #3399FF;
 }
 
 .mymazon-header-shoppingcart-icon {
@@ -176,13 +197,18 @@ label {
 }
 
 
-/* お気に入り機能  */
+/* favorite */
 .samazon-favorite-button {
     border-radius: 2px;
-    border: solid 1px #0fbe9f;
+    border: solid 0.5px #FF0033;
     background-color: #ffffff;
 }
 
 .text-favorite {
-    color: #0fbe9f;
+    color: gray;
+}
+/**/
+.heart {
+    color: #FF0033;
+  
 }

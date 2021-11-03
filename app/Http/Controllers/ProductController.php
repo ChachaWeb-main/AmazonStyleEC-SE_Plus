@@ -18,7 +18,7 @@ class ProductController extends Controller
     // 作成されたすべての商品を表示
     public function index()
     {
-        $products = Product::all();
+        $products = Product::paginate(15); //ページネーション実装
 
         return view('products.index', compact('products')); //compact関数で、変数$productsがビューに渡される。
     }
