@@ -19,10 +19,10 @@
         <ul class="navbar-nav ml-auto mr-5 mt-2">
             <!-- Authentication Links -->
             @guest
-            <li class="nav-item mr-4">
+            <li class="nav-item mr-5">
                 <a class="nav-link" href="{{ route('register') }}"><label>新規登録</label></a>
             </li>
-            <li class="nav-item mr-4">
+            <li class="nav-item mr-5">
                 <a class="nav-link" href="{{ route('login') }}"><label>ログイン</label></a>
             </li>
             <hr>

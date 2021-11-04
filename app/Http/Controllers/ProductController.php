@@ -16,11 +16,23 @@ class ProductController extends Controller
      */
      
     // 作成されたすべての商品を表示
-    public function index()
+    public function index(Request $request) //Request $requestを追加し,これにより渡された値を、アクション内で使用することができるようになる。
     {
-        $products = Product::paginate(15); //ページネーション実装
+        if ($request->category !== null) {
+            $products = Product::where('category_id', $request->category)->paginate(15); //受け取った絞り込みたいカテゴリのIDを持つ商品データを取得し、ページネーションも実行。
+            $total_count = Product::where('category_id', $request->category)->count(); //当該カテゴリの商品数を表示。
+            $category = Category::find($request->category);
+        } else {
+            $products = Product::paginate(15);
+            $total_count = "";
+            $category = null;
+        }
+        
+        $categories = Category::all(); //全カテゴリーを$categotiesに代入
+        $major_category_names = Category::pluck('major_category_name')->unique(); /*全カテゴリのデータからmajor_category_nameのカラムのみを取得し,
+                                                                                    そのうえでuniq()を使い、重複している部分を削除。*/
 
-        return view('products.index', compact('products')); //compact関数で、変数$productsがビューに渡される。
+        return view('products.index', compact('products', 'category', 'categories', 'major_category_names', 'total_count')); //compact関数で、ビューに渡される。
     }
     
     // お気に入り機能実装

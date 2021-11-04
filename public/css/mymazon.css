@@ -210,5 +210,19 @@ label {
 /**/
 .heart {
     color: #FF0033;
-  
+}
+
+
+/* sidebar */
+.mymazon-sidebar-category-label {
+    width: 156px;
+    height: 20px;
+    font-family: YuGo;
+    font-size: 13px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #191919;
 }
