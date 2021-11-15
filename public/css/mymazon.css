@@ -198,7 +198,7 @@ label {
 
 
 /* favorite */
-.samazon-favorite-button {
+.mymazon-favorite-button {
     border-radius: 2px;
     border: solid 0.5px #FF0033;
     background-color: #ffffff;
@@ -226,3 +226,22 @@ label {
     letter-spacing: normal;
     color: #191919;
 }
+
+/**/
+/* mypage */
+.myp-icon {
+    color: #555555;
+}
+
+.mypage-item {
+    font-size: 18px;
+}
+
+
+/* user */
+.user-edit-label {
+  cursor: pointer;
+  cursor: hand;
+}
+
+

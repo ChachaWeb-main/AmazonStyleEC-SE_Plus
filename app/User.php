@@ -27,8 +27,9 @@ class User extends Authenticatable implements MustVerifyEmail
      *
      * @var array
      */
+    //  どのカラムを自動的に保存するかどうか
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password', 'postal_code', 'address', 'phone'
     ];
 
     /**
