@@ -44,12 +44,12 @@
                     <div class="col-5">
                         {{-- お気に入り機能の実装 --}}
                         @if($product->isFavoritedBy(Auth::user()))
-                        <a href="/products/{{ $product->id }}/favorite" class="btn samazon-favorite-button text-favorite w-100">
+                        <a href="/products/{{ $product->id }}/favorite" class="btn mymazon-favorite-button text-favorite w-100">
                             <i class="heart fa fa-heart"></i>
                             お気に入り解除
                         </a>
                         @else
-                        <a href="/products/{{ $product->id }}/favorite" class="btn samazon-favorite-button text-favorite w-100">
+                        <a href="/products/{{ $product->id }}/favorite" class="btn mymazon-favorite-button text-favorite w-100">
                             <i class="heart fa fa-heart"></i>
                             お気に入り
                         </a>

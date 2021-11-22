@@ -38,6 +38,11 @@
                     <i class="myp-icon fas fa-user mr-1"></i><label>マイページ</label>
                 </a>
             </li>
+            <li class="nav-item mr-5">
+                <a class="nav-link" href="{{ route('mypage.favorite') }}">
+                    <i class="heart far fa-heart"></i>
+                </a>
+            </li>
             @endguest
         </ul>
     </div>

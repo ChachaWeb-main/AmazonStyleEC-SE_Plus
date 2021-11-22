@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\User;
+use App\Product; //お気に入りした商品表示のため
 use Illuminate\Support\Facades\Auth; //追加
 use Illuminate\Http\Request;
 
@@ -40,14 +41,14 @@ class UserController extends Controller
     public function update(Request $request, User $user)
     {
         $user = Auth::user();
-
+        
         $user->name = $request->input('name') ? $request->input('name') : $user->name;
         $user->email = $request->input('email') ? $request->input('email') : $user->email;
         $user->postal_code = $request->input('postal_code') ? $request->input('postal_code') : $user->postal_code;
         $user->address = $request->input('address') ? $request->input('address') : $user->address;
         $user->phone = $request->input('phone') ? $request->input('phone') : $user->phone;
         $user->update();
-
+        
         return redirect()->route('mypage');
     }
     
@@ -55,7 +56,7 @@ class UserController extends Controller
     public function edit_address()
     {
         $user = Auth::user();
-
+        
         return view('users.edit_address', compact('user'));
     }
     
@@ -68,7 +69,7 @@ class UserController extends Controller
     public function update_password(Request $request)
     {
         $user = Auth::user();
-
+        
         /* 送信されたリクエスト内のpasswordとpassword_confirmationが同一のものであるかどうかを確認し、
         同じである場合のみパスワードを暗号化しデータベースへと保存。*/
         if ($request->input('password') == $request->input('password_confirmation')) {
@@ -78,7 +79,18 @@ class UserController extends Controller
             // 異なっていた場合は、パスワード変更画面へとリダイレクト。
             return redirect()->route('mypage.edit_password');
         }
-
+        
         return redirect()->route('mypage');
     }
+    
+    // お気に入りした商品表示。
+    public function favorite()
+    {
+        $user = Auth::user();
+        // ユーザーがお気に入りした商品を全て$favoritesへと保存。
+        $favorites = $user->favorites(Product::class)->get();
+        // $favoritesをビューへと渡す。
+        return view('users.favorite', compact('favorites'));
+    }
+
 }

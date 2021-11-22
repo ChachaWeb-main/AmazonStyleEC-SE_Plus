@@ -18,9 +18,10 @@ Route::get('/', function () {
 // ユーザー情報関連の各ルーティングを設定。
 Route::get('users/mypage', 'UserController@mypage')->name('mypage');
 Route::get('users/mypage/edit', 'UserController@edit')->name('mypage.edit');
-Route::get('users/mypage/address/edit', 'UserController@edit_address')->name('mypage.edit_address');
+Route::get('users/mypage/address/edit', 'UserController@edit_address')->name('mypage.edit_address'); //登録住所変更。
 Route::put('users/mypage', 'UserController@update')->name('mypage.update');
-Route::get('users/mypage/password/edit', 'UserController@edit_password')->name('mypage.edit_password');
+Route::get('users/mypage/favorite', 'UserController@favorite')->name('mypage.favorite'); //お気に入りした商品表示。
+Route::get('users/mypage/password/edit', 'UserController@edit_password')->name('mypage.edit_password'); //パスワード変更。
 Route::put('users/mypage/password', 'UserController@update_password')->name('mypage.update_password');
 
 /* レビューの内容をデータとしてフォームから送信する必要があるため、Route::postでPOSTで使用するルーティングだと分かるようにコードを。
