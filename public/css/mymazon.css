@@ -166,7 +166,7 @@ label {
     letter-spacing: normal;
     color: #ffffff;
     background-color: #0fbe9f; 
-    border-radius: 30px; 
+    border-radius: 10px; 
 }
 
 
@@ -249,3 +249,24 @@ label {
   cursor: hand;
 }
 
+/**/
+/* -------- button ボタン ----------*/
+.btn {
+  box-shadow: 0 2.5px #aaaaaa;
+  opacity: 0.8;
+}
+
+.btn.btn-link {
+  box-shadow: none;
+  opacity: 1;
+}
+
+.btn a:hover {
+  filter: drop-shadow(5px 5px 5px silver);
+}
+
+.btn:active {
+  position: relative;
+  top: 5px;
+  box-shadow: none;
+}

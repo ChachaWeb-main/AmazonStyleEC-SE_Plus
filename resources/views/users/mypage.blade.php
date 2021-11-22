@@ -3,7 +3,7 @@
 @section('content')
 <div class="container d-flex justify-content-center mt-3">
     <div class="w-50">
-        <h1>マイページ</h1>
+        <h1>【マイページ】</h1>
         
         <hr>
         

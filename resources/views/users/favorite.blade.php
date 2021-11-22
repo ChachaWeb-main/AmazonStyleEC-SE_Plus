@@ -12,7 +12,7 @@
             <div class="col-md-8 mt-2">
                 <div class="d-inline-flex">
                     <a href="{{route('products.show', $fav)}}" class="w-25">
-                        <img src="{{ asset('img/dummy.png')}}" class="img-fuild w-100">
+                        <img src="{{ asset('img/book.jpg')}}" class="img-fuild w-100">
                     </a>
                     <div class="container mt-3">
                         <h5 class="w-100 mymazon-favorite-item-text">{{App\Product::find($fav->favoriteable_id)->name}}</h5>
