@@ -35,7 +35,7 @@
             @else
              <li class="nav-item mr-5">
                 <a class="nav-link" href="{{ route('mypage') }}">
-                    <i class="fas fa-user mr-1"></i><label>マイページ</label>
+                    <i class="myp-icon fas fa-user mr-1"></i><label>マイページ</label>
                 </a>
             </li>
             @endguest

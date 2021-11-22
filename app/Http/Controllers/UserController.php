@@ -51,11 +51,34 @@ class UserController extends Controller
         return redirect()->route('mypage');
     }
     
-    // 会員の住所変更を行うページ用
+    // 会員の住所変更を行うページ用。
     public function edit_address()
     {
         $user = Auth::user();
 
         return view('users.edit_address', compact('user'));
+    }
+    
+    // パスワード変更画面を表示するedit_passwordアクションを作成。
+    public function edit_password()
+    {
+        return view('users.edit_password');
+    }
+    
+    public function update_password(Request $request)
+    {
+        $user = Auth::user();
+
+        /* 送信されたリクエスト内のpasswordとpassword_confirmationが同一のものであるかどうかを確認し、
+        同じである場合のみパスワードを暗号化しデータベースへと保存。*/
+        if ($request->input('password') == $request->input('password_confirmation')) {
+            $user->password = bcrypt($request->input('password'));
+            $user->update();
+        } else {
+            // 異なっていた場合は、パスワード変更画面へとリダイレクト。
+            return redirect()->route('mypage.edit_password');
+        }
+
+        return redirect()->route('mypage');
     }
 }
