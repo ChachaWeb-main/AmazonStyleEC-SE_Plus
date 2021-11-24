@@ -11,7 +11,10 @@
             <div class="d-flex justify-content-between">
                 <div class="row">
                     <div class="col-2 d-flex align-items-center">
-                        <i class="myp-icon fas fa-user fa-3x"></i>
+                        {{----}}
+                        <a href="{{route('mypage.edit')}}">
+                            <i class="myp-icon fas fa-user fa-3x"></i>
+                        </a>
                     </div>
                     <div class="col-9 d-flex align-items-center ml-2 mt-3">
                         <div class="d-flex flex-column">
@@ -34,7 +37,10 @@
             <div class="d-flex justify-content-between">
                 <div class="row">
                     <div class="col-2 d-flex align-items-center">
-                        <i class="myp-icon fas fa-archive fa-3x"></i>
+                        {{----}}
+                        <a href="{{route('mypage')}}">
+                            <i class="myp-icon fas fa-archive fa-3x"></i>
+                        </a>
                     </div>
                     <div class="col-9 d-flex align-items-center ml-2 mt-3">
                         <div class="d-flex flex-column">
@@ -57,7 +63,10 @@
             <div class="d-flex justify-content-between">
                 <div class="row">
                     <div class="col-2 d-flex align-items-center">
-                        <i class="myp-icon fas fa-map-marked fa-3x"></i>
+                        {{----}}
+                        <a href="{{route('mypage.edit_address')}}">
+                            <i class="myp-icon fas fa-map-marked fa-3x"></i>
+                        </a>
                     </div>
                     <div class="col-9 d-flex align-items-center ml-3 mt-3">
                         <div class="d-flex flex-column">
@@ -80,7 +89,10 @@
             <div class="d-flex justify-content-between">
                 <div class="row">
                     <div class="col-2 d-flex align-items-center">
-                        <i class="myp-icon fas fa-lock fa-3x"></i>
+                        {{----}}
+                        <a href="{{route('mypage.edit_password')}}">
+                            <i class="myp-icon fas fa-lock fa-3x"></i>
+                        </a>
                     </div>
                     <div class="col-9 d-flex align-items-center ml-2 mt-3">
                         <div class="d-flex flex-column">
@@ -103,7 +115,10 @@
             <div class="d-flex justify-content-between">
                 <div class="row">
                     <div class="col-2 d-flex align-items-center">
-                        <i class="myp-icon fas fa-sign-out-alt fa-3x"></i>
+                        {{----}}
+                        <a href="{{route('logout')}}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                          <i class="myp-icon fas fa-sign-out-alt fa-3x"></i>
+                        </a>
                     </div>
                     <div class="col-9 d-flex align-items-center ml-2 mt-3">
                         <div class="d-flex flex-column">
