@@ -94,36 +94,36 @@ label {
 
 /* login */
 .mymazon-login-input {
-    border-radius: 2px;
-    border: solid 1px #b2b2b2;
-    background-color: #ffffff;
+  border-radius: 2px;
+  border: solid 1px #b2b2b2;
+  background-color: #ffffff;
 }
 
 .mymazon-check-label {
-    font-family: YuGo;
-    font-size: 13px;
-    font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: normal;
-    letter-spacing: normal;
-    color: #000000;
+  font-family: YuGo;
+  font-size: 13px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #000000;
 }
 
 .mymazon-require-input-label {
-    border-radius: 1px;
-    background-color: #e2001b;
+  border-radius: 1px;
+  background-color: #e2001b;
 }
 
 .mymazon-require-input-label-text {
-    font-family: YuGo;
-    font-size: 14px;
-    font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: normal;
-    letter-spacing: normal;
-    color: #ffffff;
+  font-family: YuGo;
+  font-size: 14px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #ffffff;
 }
 
 
@@ -133,115 +133,130 @@ label {
 
 /* show */
 .mymazon-submit-button {
-    font-family: YuGo;
-    font-size: 15px;
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: normal;
-    letter-spacing: normal;
-    color: #b2b2b2;
-    color: #ffffff;
-    background-color: #3399FF;
+  font-family: YuGo;
+  font-size: 15px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #b2b2b2;
+  color: #ffffff;
+  background-color: #3399FF;
 }
 
 .mymazon-login-text {
-    font-family: YuGo;
-    font-size: 15px;
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: normal;
-    letter-spacing: normal;
-    color: #3399FF;
+  font-family: YuGo;
+  font-size: 15px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #3399FF;
 }
 /**/
 .mymazon-register-text {
-    font-family: YuGo;
-    font-size: 15px;
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: normal;
-    letter-spacing: normal;
-    color: #ffffff;
-    background-color: #0fbe9f; 
-    border-radius: 10px; 
+  font-family: YuGo;
+  font-size: 15px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #ffffff;
+  background-color: #0fbe9f; 
+  border-radius: 10px; 
 }
 
 
 /* header */
 .mymazon-header-container {
-    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1);
-    background-color: #ffffff;
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
 }
 
 .mymazon-header-search-input {
-    border: solid 1px #e5e5e5;
+  border: solid 1px #e5e5e5;
 }
 
 .mymazon-header-search-button {
-    background-color: #3399FF;
+  background-color: #3399FF;
 }
 
 .mymazon-header-search-icon {
-    color: #ffffff;
+  color: #ffffff;
 }
 
 .mymazon-header-fav-icon {
-    color: #3399FF;
+  color: #3399FF;
 }
 
 .mymazon-header-shoppingcart-icon {
-    color: #ffffff;
+  color: #ffffff;
 }
 
 
 /* favorite */
 .mymazon-favorite-button {
-    border-radius: 2px;
-    border: solid 0.5px #FF0033;
-    background-color: #ffffff;
+  border-radius: 2px;
+  border: solid 0.5px #FF0033;
+  background-color: #ffffff;
 }
 
 .text-favorite {
-    color: gray;
+  color: gray;
 }
 /**/
 .heart {
-    color: #FF0033;
+  color: #FF0033;
 }
 
 .mymazon-favorite-add-cart {
-    border-radius: 2px;
-    background-color: #0fbe9f;
+  border-radius: 2px;
+  background-color: #3399FF;
+}
+
+.mymazon-favorite-item-delete {
+  /**/
+  color: red;
+  font-weight: bold;
+  font-size: 15px;
+  letter-spacing: 0.1em;
+  padding: 0 5px;
+  border-bottom: dashed 1px red;
 }
 
 
 /* sidebar */
 .mymazon-sidebar-category-label {
-    width: 156px;
-    height: 20px;
-    font-family: YuGo;
-    font-size: 13px;
-    font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: normal;
-    letter-spacing: normal;
-    color: #191919;
+  width: 156px;
+  height: 20px;
+  font-family: YuGo;
+  font-size: 13px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #191919;
 }
 
 /**/
 /* mypage */
 .myp-icon {
-    color: #555555;
+  color: #555555;
 }
 
 .mypage-item {
-    font-size: 18px;
+  font-size: 18px;
 }
 
+/**/
+/* carts */
+.carts-icon {
+  color: #3399FF;
+}
 
 /* user */
 .user-edit-label {

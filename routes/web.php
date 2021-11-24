@@ -15,6 +15,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('users/carts', 'CartController@index')->name('carts.index'); //カートの中身を確認するページ。
+
+Route::post('users/carts', 'CartController@store')->name('carts.store'); //カート追加する。
+
+Route::delete('users/carts', 'CartController@destroy')->name('carts.destroy'); //カート内の商品を購入。
+
 // ユーザー情報関連の各ルーティングを設定。
 Route::get('users/mypage', 'UserController@mypage')->name('mypage');
 Route::get('users/mypage/edit', 'UserController@edit')->name('mypage.edit');

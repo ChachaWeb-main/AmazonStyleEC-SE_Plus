@@ -3,7 +3,7 @@
 @section('content')
 <div class="container  d-flex justify-content-center mt-3">
     <div class="w-75">
-        <h1>お気に入り</h1>
+        <h1>【お気に入り】</h1>
 
         <hr>
 
@@ -21,12 +21,12 @@
                 </div>
             </div>
             <div class="col-md-2 d-flex align-items-center justify-content-end">
+                <button type="submit" class="btn mymazon-favorite-add-cart text-white w-110">カートに入れる</button>
+            </div>
+            <div class="col-md-2 d-flex align-items-center justify-content-end">
                 <a href="/products/{{ $fav->id }}/favorite" class="mymazon-favorite-item-delete">
                     削除
                 </a>
-            </div>
-            <div class="col-md-2 d-flex align-items-center justify-content-end">
-                <button type="submit" class="btn mymazon-favorite-add-cart text-white w-100">カートに入れる</button>
             </div>
             @endforeach
         </div>

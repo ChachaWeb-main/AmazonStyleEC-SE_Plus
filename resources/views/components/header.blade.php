@@ -40,7 +40,12 @@
             </li>
             <li class="nav-item mr-5">
                 <a class="nav-link" href="{{ route('mypage.favorite') }}">
-                    <i class="heart far fa-heart fa-lg"></i><lavel class="text-danger"> お気に入り</lavel>
+                    <i class="heart far fa-heart fa-lg mr-1"></i><lavel class="text-danger">お気に入り</lavel>
+                </a>
+            </li>
+            <li class="nav-item mr-5">
+                <a class="nav-link" href="{{ route('carts.index') }}">
+                    <i class="carts-icon fas fa-shopping-cart fa-lg mr-1"></i><lavel class="text-primary">カート</lavel>
                 </a>
             </li>
             @endguest
