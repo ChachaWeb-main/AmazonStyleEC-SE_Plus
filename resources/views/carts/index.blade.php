@@ -4,7 +4,7 @@
 <div class="container d-flex justify-content-center mt-3">
     <div class="w-75">
         <h1>【ショッピングカート】</h1>
-
+        
         <div class="row">
             <div class="offset-8 col-4">
                 <div class="row">
@@ -17,9 +17,9 @@
                 </div>
             </div>
         </div>
-
+        
         <hr>
-
+        
         <div class="row">
             @foreach ($cart as $product)
             <div class="col-md-2 mt-2">
@@ -38,9 +38,9 @@
             </div>
             @endforeach            
         </div>
-
+        
         <hr>
-
+        
         <div class="offset-8 col-4">
             <div class="row">
                 <div class="col-6">

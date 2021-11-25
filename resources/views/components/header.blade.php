@@ -27,10 +27,14 @@
             </li>
             <hr>
             <li class="nav-item mr-5">
-                <a class="nav-link" href="{{ route('login') }}"><i class="heart far fa-heart fa-lg"></i></a>
+                <a class="nav-link" href="{{ route('login') }}">
+                    <i class="heart far fa-heart fa-lg mr-1"></i><lavel class="text-danger">お気に入り</lavel>
+                </a>
             </li>
             <li class="nav-item mr-5">
-                <a class="nav-link" href="{{ route('login') }}"><i class="fas fa-shopping-cart fa-lg"></i></a>
+                <a class="nav-link" href="{{ route('login') }}">
+                    <i class="carts-icon fas fa-shopping-cart fa-lg mr-1"></i><lavel class="text-primary">カート</lavel>
+                </a>
             </li>
             @else
              <li class="nav-item mr-5">
