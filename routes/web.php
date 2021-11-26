@@ -42,3 +42,8 @@ Route::resource('products', 'ProductController');
 Auth::routes(['verify' => true]);
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+// APP_ENVという環境変数を使い、自動的に本番環境か開発環境かをLaravel側で判断し、どちらでも動作するように修正。
+if (env('APP_ENV') === 'production') {
+    URL::forceScheme('https');
+}
