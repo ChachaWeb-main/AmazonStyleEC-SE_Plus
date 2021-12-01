@@ -72,8 +72,14 @@
                 {{-- その商品に関しての全てのレビューが$reviewsに保存されており、foreach を使うことで全てのレビューを表示させる --}}
                 @foreach($reviews as $review)
                 <div class="offset-md-5 col-md-5">
+                    {{-- 保存されたレビューの評価を表示 --}}
+                    <h3 class="review-score-color">{{ str_repeat('★', $review->score) }}</h3>
                     <p class="h3">{{$review->content}}</p>
+                    {{-- レビューをしたユーザーの名前を表示 --}}
+                    <h4>{{$review->user->name}}</h4>
                     <label>{{$review->created_at}}</label>
+                    <br>
+                    <br>
                 </div>
                 @endforeach
             </div>
@@ -83,6 +89,16 @@
                 <div class="offset-md-5 col-md-5">
                     <form method="POST" action="/products/{{ $product->id }}/reviews">
                         {{ csrf_field() }}
+                        {{-- レビュー星 評価項目 --}}
+                        <h4>評価</h4>
+                        <select name="score" class="form-control m-2 review-score-color">
+                            <option value="5" class="review-score-color">★★★★★</option>
+                            <option value="4" class="review-score-color">★★★★</option>
+                            <option value="3" class="review-score-color">★★★</option>
+                            <option value="2" class="review-score-color">★★</option>
+                            <option value="1" class="review-score-color">★</option>
+                        </select>
+                        <h4>レビュー内容</h4>
                         <textarea name="content" class="form-control m-2"></textarea>
                         <button type="submit" class="btn mymazon-submit-button ml-2">レビューを追加</button>
                     </form>

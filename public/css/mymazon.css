@@ -228,6 +228,16 @@ label {
 }
 
 
+/* review */
+.review-score-color {
+  color: #FFCC66;
+}
+
+.review-score-color:focus {
+  color: #FFCC66;
+}
+
+
 /* sidebar */
 /**/
 .sidebar-category-name {
@@ -248,6 +258,7 @@ label {
   letter-spacing: normal;
   color: #191919;
 }
+
 
 /* Top Page */
 /**/
