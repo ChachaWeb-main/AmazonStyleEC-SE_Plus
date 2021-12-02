@@ -63,10 +63,31 @@
                 買い物を続ける
             </a>
             @if ($total > 0)
-            <button type="submit" class="btn mymazon-submit-button">購入を確定する</button>
+            {{--<button type="submit" class="btn mymazon-submit-button">購入を確定する</button>--}}
+            <div class="btn mymazon-submit-button" data-toggle="modal" data-target="#buy-confirm-modal">購入を確定する</div>
             @else
-            <button type="submit" class="btn mymazon-submit-button disabled">購入を確定する</button>
+            {{--<button type="submit" class="btn mymazon-submit-button disabled">購入を確定する</button>--}}
+            <div class="btn mymazon-submit-button disabled" data-toggle="modal" data-target="#buy-confirm-modal">購入を確定する</div>
             @endif
+            
+            {{-- 呼び出されるモーダルのコード --}}
+            <div class="modal fade" id="buy-confirm-modal" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+               <div class="modal-dialog">
+                   <div class="modal-content">
+                       <div class="modal-header">
+                           <h5 class="modal-title" id="staticBackdropLabel">購入を確定しますか？</h5>
+                           <button type="button" class="close" data-dismiss="modal" aria-label="閉じる">
+                               <span aria-hidden="true">&times;</span>
+                           </button>
+                       </div>
+                       <div class="modal-footer">
+                           <button type="button" class="btn mymazon-favorite-button border-dark text-dark" data-dismiss="modal">閉じる</button>
+                           <button type="submit" class="btn mymazon-submit-button">購入</button>
+                       </div>
+                   </div>
+               </div>
+           </div>
+            
         </form>
         
     </div>
