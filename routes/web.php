@@ -50,6 +50,7 @@ Route::get('/dashboard', 'DashboardController@index')->middleware('auth:admins')
 Route::group(['prefix' => 'dashboard', 'as' => 'dashboard.'], function () {
     Route::get('login', 'Dashboard\Auth\LoginController@showLoginForm')->name('login');
     Route::post('login', 'Dashboard\Auth\LoginController@login')->name('login');
+    Route::resource('categories', 'Dashboard\CategoryController')->middleware('auth:admins'); //カテゴリ
 });
 
 // APP_ENVという環境変数を使い、自動的に本番環境か開発環境かをLaravel側で判断し、どちらでも動作するように修正。

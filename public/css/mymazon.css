@@ -302,6 +302,31 @@ label {
   cursor: hand;
 }
 
+
+/* Dashbord 管理画面  */
+.dashboard-edit-link {
+  font-family: YuGo;
+  font-size: 14px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #3399FF;
+}
+
+.dashboard-delete-link {
+  font-family: YuGo;
+  font-size: 14px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #ff0000;
+}
+
+
 /**/
 /* -------- button ボタン ----------*/
 .btn {
