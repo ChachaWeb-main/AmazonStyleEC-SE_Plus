@@ -43,6 +43,15 @@ Auth::routes(['verify' => true]);
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+// ログインした管理者以外のアクセスを弾くように。
+Route::get('/dashboard', 'DashboardController@index')->middleware('auth:admins');
+
+// 管理者画面
+Route::group(['prefix' => 'dashboard', 'as' => 'dashboard.'], function () {
+    Route::get('login', 'Dashboard\Auth\LoginController@showLoginForm')->name('login');
+    Route::post('login', 'Dashboard\Auth\LoginController@login')->name('login');
+});
+
 // APP_ENVという環境変数を使い、自動的に本番環境か開発環境かをLaravel側で判断し、どちらでも動作するように修正。
 if (env('APP_ENV') === 'production') {
     URL::forceScheme('https');

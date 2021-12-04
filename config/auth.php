@@ -40,7 +40,12 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
-
+        
+        'admins' => [
+            'driver' => 'session', // sessionを指定することで、セッションでログイン状態を保持するように。
+            'provider' => 'admins', // 認証に使用する確認方法（そのユーザーが存在するかどうかなど）として、adminsを指定。
+       ],
+        
         'api' => [
             'driver' => 'token',
             'provider' => 'users',
@@ -70,7 +75,12 @@ return [
             'driver' => 'eloquent',
             'model' => App\User::class,
         ],
-
+        
+        'admins' => [
+           'driver' => 'eloquent', // 確認方法を指定。ここではeloquentを指定し、データベースに保存されているデータをもとに確認するように。
+           'model' => App\Admin::class, // データベースのどのデータを使用するかを指定するが、ここではApp\Admin::classを指定。
+        ]
+        
         // 'users' => [
         //     'driver' => 'database',
         //     'table' => 'users',
