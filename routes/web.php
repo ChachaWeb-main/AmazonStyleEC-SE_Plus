@@ -36,9 +36,11 @@ Route::post('products/{product}/reviews', 'ReviewController@store');
 
 //お気に入り機能実装。
 Route::get('products/{product}/favorite', 'ProductController@favorite')->name('products.favorite');
-/*Route::resourceを使うことで、CRUD用のURLを一度に定義することができる。
-第一引数にベースとなるURLを文字列で渡し、第二引数で使用するコントローラを指定する。*/
-Route::resource('products', 'ProductController');
+
+// 商品の管理画面
+Route::get('products', 'ProductController@index')->name('products.index');
+Route::get('products/{product}', 'ProductController@show')->name('products.show');
+
 Auth::routes(['verify' => true]);
 
 Route::get('/home', 'HomeController@index')->name('home');
@@ -51,6 +53,7 @@ Route::group(['prefix' => 'dashboard', 'as' => 'dashboard.'], function () {
     Route::get('login', 'Dashboard\Auth\LoginController@showLoginForm')->name('login');
     Route::post('login', 'Dashboard\Auth\LoginController@login')->name('login');
     Route::resource('categories', 'Dashboard\CategoryController')->middleware('auth:admins'); //カテゴリ
+    Route::resource('products', 'Dashboard\ProductController')->middleware('auth:admins'); // 商品
 });
 
 // APP_ENVという環境変数を使い、自動的に本番環境か開発環境かをLaravel側で判断し、どちらでも動作するように修正。

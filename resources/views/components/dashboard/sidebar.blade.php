@@ -6,7 +6,9 @@
     
     <h2>【商品管理】</h2>
     <div class="d-flex flex-column">
-        <label class="mymazon-sidebar-category-label">　商品一覧　</label>
+        <label class="mymazon-sidebar-category-label">
+            <a href="/dashboard/products">　商品一覧　</a>
+        </label>
         <label class="mymazon-sidebar-category-label">　親カテゴリ管理　</label>
         <label class="mymazon-sidebar-category-label">
            <a href="/dashboard/categories">　カテゴリ管理　</a>
