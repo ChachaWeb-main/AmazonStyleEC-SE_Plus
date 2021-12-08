@@ -3,6 +3,16 @@
 
 @section('content')
 <div class="w-75">
+    @if ($errors->any())
+       <div class="alert alert-danger">
+           <ul>
+               @foreach ($errors->all() as $error)
+                   <li>{{ $error }}</li>
+               @endforeach
+           </ul>
+       </div>
+    @endif
+    
     <form method="POST" action="/dashboard/categories">
         {{ csrf_field() }}
         <div class="form-group">
@@ -14,8 +24,12 @@
             <textarea name="description" id="category-description" class="form-control"></textarea>
         </div>
         <div class="form-group">
-            <label for="category-major-category-name">親カテゴリ名</label>
-            <input type="text" name="major_category_name" id="category-major-category-name" class="form-control">
+            <label for="category-major-category">親カテゴリ名</label>
+            <select name="major_category_id" class="form-control col-8" id="category-major-category">
+               @foreach ($major_categories as $major_category)
+                    <option value="{{ $major_category->id }}">{{ $major_category->name }}</option>
+               @endforeach
+            </select>
         </div>
         <button type="submit" class="btn mymazon-submit-button">＋新規作成</button>
     </form>
