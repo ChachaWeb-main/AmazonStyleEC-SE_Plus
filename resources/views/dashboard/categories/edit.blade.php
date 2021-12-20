@@ -32,7 +32,7 @@
                     @if ($major_category->id == $category->major_category_id)
                         <option value="{{ $major_category->id }}" selected>{{ $major_category->name }}</option>
                     @else
-                        <option value="{{ $major_category->id }}">{{ $major_category->name }}</option>
+                <option value="{{ $major_category->id }}">{{ $major_category->name }}</option>
                     @endif
                 @endforeach
             </select>

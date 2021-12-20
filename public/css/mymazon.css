@@ -91,6 +91,11 @@ label {
   color: #191919;
 }
 
+/**/
+/*全リンク下線除去*/
+a:hover {
+  text-decoration: none;
+}
 
 /* login */
 .mymazon-login-input {

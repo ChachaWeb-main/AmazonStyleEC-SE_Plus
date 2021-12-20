@@ -37,7 +37,7 @@ Route::post('products/{product}/reviews', 'ReviewController@store');
 //お気に入り機能実装。
 Route::get('products/{product}/favorite', 'ProductController@favorite')->name('products.favorite');
 
-// 商品の管理画面
+// 商品の管理画面(Product)
 Route::get('products', 'ProductController@index')->name('products.index');
 Route::get('products/{product}', 'ProductController@show')->name('products.show');
 
@@ -48,13 +48,14 @@ Route::get('/home', 'HomeController@index')->name('home');
 // ログインした管理者以外のアクセスを弾くように。
 Route::get('/dashboard', 'DashboardController@index')->middleware('auth:admins');
 
-// 管理者画面
+// 管理者画面(Dashbord)
 Route::group(['prefix' => 'dashboard', 'as' => 'dashboard.'], function () {
     Route::get('login', 'Dashboard\Auth\LoginController@showLoginForm')->name('login');
     Route::post('login', 'Dashboard\Auth\LoginController@login')->name('login');
     Route::resource('major_categories', 'Dashboard\MajorCategoryController')->middleware('auth:admins'); //親カテゴリ(major)
     Route::resource('categories', 'Dashboard\CategoryController')->middleware('auth:admins'); //カテゴリ
     Route::resource('products', 'Dashboard\ProductController')->middleware('auth:admins'); // 商品
+    Route::resource('users', 'Dashboard\UserController')->middleware('auth:admins'); // ユーザー
 });
 
 // APP_ENVという環境変数を使い、自動的に本番環境か開発環境かをLaravel側で判断し、どちらでも動作するように修正。
