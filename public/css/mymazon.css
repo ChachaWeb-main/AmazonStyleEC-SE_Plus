@@ -221,7 +221,6 @@ a:hover {
   border-radius: 2px;
   background-color: #3399FF;
 }
-
 /**/
 .mymazon-favorite-item-delete {
   color: red;
@@ -307,6 +306,12 @@ a:hover {
   cursor: hand;
 }
 
+/* Unsubscribed 退会 */
+.mymazon-delete-submit-button {
+  border-radius: 2px;
+  background-color: #d94b0e;
+}
+
 
 /* Dashbord 管理画面  */
 .dashboard-edit-link {
@@ -329,6 +334,7 @@ a:hover {
   line-height: normal;
   letter-spacing: normal;
   color: #ff0000;
+  background-color: #eee; 
 }
 
 .h-10 {

@@ -27,6 +27,7 @@ Route::put('users/mypage', 'UserController@update')->name('mypage.update');
 Route::get('users/mypage/favorite', 'UserController@favorite')->name('mypage.favorite'); //お気に入りした商品表示。
 Route::get('users/mypage/password/edit', 'UserController@edit_password')->name('mypage.edit_password'); //パスワード変更。
 Route::put('users/mypage/password', 'UserController@update_password')->name('mypage.update_password');
+Route::delete('users/mypage/delete', 'UserController@destroy')->name('mypage.destroy'); //退会機能
 
 /* レビューの内容をデータとしてフォームから送信する必要があるため、Route::postでPOSTで使用するルーティングだと分かるようにコードを。
 また、商品のデータを自動的に取得するために、URLをproducts/{product}/reviewsとして、

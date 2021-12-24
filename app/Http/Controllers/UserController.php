@@ -92,5 +92,23 @@ class UserController extends Controller
         // $favoritesをビューへと渡す。
         return view('users.favorite', compact('favorites'));
     }
+    
+    // ユーザー側から退会できるように
+    public function destroy(Request $request)
+    {
+        $user = Auth::user();
+        
+        if ($user->deleted_flag) {
+           $user->deleted_flag = false;
+        } else {
+           $user->deleted_flag = true;
+        }
+        
+        $user->update();
+        
+        Auth::logout();
+        
+        return redirect('/');
+    }
 
 }
