@@ -40,6 +40,16 @@
                 @endforeach
             </select>
         </div>
+        {{-- おすすめ商品かどうかを選択するチェックボックス --}}
+        <div class="form-inline mt-4 mb-4 row">
+            <label for="product-price" class="col-2 d-flex justify-content-start">オススメ?</label>
+            @if ($product->recommend_flag)
+            <input type="checkbox" name="recommend" id="product-recommend" class="samazon-check-box" checked>
+            @else
+            <input type="checkbox" name="recommend" id="product-recommend" class="samazon-check-box">
+            @endif
+        </div>
+        
         <div class="form-inline mt-4 mb-4 row">
             <label for="product-description" class="col-2 d-flex justify-content-start align-self-start">商品説明</label>
             <textarea name="description" id="product-description" class="form-control col-8" rows="10">{{ $product->description }}</textarea>
