@@ -40,7 +40,11 @@
             <label for="product-price" class="col-2 d-flex justify-content-start">オススメ?</label>
             <input type="checkbox" name="recommend" id="product-recommend" class="mymazon-check-box">
         </div>
-    
+        {{-- formタグの中に送料の有無を選択するチェックボックスを追加。送料が必要な商品であれば、チェックを入れることで送料を計算に含めることができる。 --}}
+        <div class="form-inline mt-4 mb-4 row">
+            <label for="product-carriage" class="col-2 d-flex justify-content-start">送料</label>
+            <input type="checkbox" name="carriage" id="product-carriage" class="samazon-check-box">
+        </div>        
         <div class="form-inline mt-4 mb-4 row">
             <label for="product-description" class="col-2 d-flex justify-content-start align-self-start">商品説明</label>
             <textarea name="description" id="product-description" class="form-control col-8" rows="10"></textarea>

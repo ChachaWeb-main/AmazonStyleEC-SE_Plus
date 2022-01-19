@@ -26,7 +26,11 @@ class CartController extends Controller
         $total = 0;
         
         foreach ($cart as $c) {
-            $total += $c->qty * $c->price;
+            if($c->options->carriage) {
+                $total += ($c->qty * ($c->price + env('CARRIAGE'))); //env('CARRIAGE')の部分では、環境変数に設定した送料の金額を取得している。
+            } else {
+                $total += $c->qty * $c->price;
+            }
         }
         
         return view('carts.index', compact('cart', 'total'));
@@ -50,7 +54,8 @@ class CartController extends Controller
                 'name' => $request->name, 
                 'qty' => $request->qty, 
                 'price' => $request->price, 
-                'weight' => $request->weight, 
+                'weight' => $request->weight,
+                'options' => ['carriage' => $request->carriage] // formから送信された送料の有無をカートに保存。
             ] 
         );
         

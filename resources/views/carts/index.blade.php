@@ -34,7 +34,12 @@
                 <h3 class="w-100 mt-4">{{$product->qty}}</h3>
             </div>
             <div class="col-md-2">
+                {{-- カートの商品の合計金額に、送料が合算されるように --}}
+                @if ($product->options->carriage)
+                    <h3 class="w-100 mt-4">￥{{$product->qty * ($product->price + env('CARRIAGE'))}}</h3>
+                @else
                 <h3 class="w-100 mt-4">￥{{$product->qty * $product->price}}</h3>
+                @endif
             </div>
             @endforeach            
         </div>

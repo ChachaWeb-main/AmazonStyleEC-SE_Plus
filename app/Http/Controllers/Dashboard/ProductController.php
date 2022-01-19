@@ -88,6 +88,13 @@ class ProductController extends Controller
         } else {
             $product->recommend_flag = false;
         }
+        // 送料の有無の受け取った値を取得保存する。
+        // $request->input('carriage') == 'on'の部分では、送料にチェックが入っているどうかを判定。
+        if ($request->input('carriage') == 'on') {
+            $product->carriage_flag = true;
+        } else {
+            $product->carriage_flag = false;
+        }
         $product->save();
         
         return redirect()->route('dashboard.products.index');
@@ -135,6 +142,12 @@ class ProductController extends Controller
             $product->recommend_flag = true;
         } else {
             $product->recommend_flag = false;
+        }
+        // 既存の商品を編集するときにも、送料の有無を受け取って保存する。
+        if ($request->input('carriage') == 'on') {
+            $product->carriage_flag = true;
+        } else {
+            $product->carriage_flag = false;
         }
         $product->update();
         
