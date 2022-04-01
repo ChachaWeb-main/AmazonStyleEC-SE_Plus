@@ -6,6 +6,7 @@ namespace App\Http\Controllers\Dashboard;
 use App\Product; //追加
 use App\Category; //追加
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage; //追加 #18
 use App\Http\Controllers\Controller;
 
 class ProductController extends Controller
@@ -88,6 +89,14 @@ class ProductController extends Controller
         } else {
             $product->recommend_flag = false;
         }
+        // 商品画像をアップロードできるように #18
+        if ($request->file('image') !== null) {
+            $image = $request->file('image')->store('public/products');
+            $product->image = basename($image);
+        } else {
+            $product->image = '';
+        }
+        
         // 送料の有無の受け取った値を取得保存する。
         // $request->input('carriage') == 'on'の部分では、送料にチェックが入っているどうかを判定。
         if ($request->input('carriage') == 'on') {
@@ -142,6 +151,15 @@ class ProductController extends Controller
             $product->recommend_flag = true;
         } else {
             $product->recommend_flag = false;
+        }
+        // 商品画像をアップロードできるように #18
+        if ($request->hasFile('image')) {
+            $image = $request->file('image')->store('public/products');
+            $product->image = basename($image);
+        } else if(isset($product->image)) {
+            // do nothing
+        } else {
+            $product->image = '';
         }
         // 既存の商品を編集するときにも、送料の有無を受け取って保存する。
         if ($request->input('carriage') == 'on') {

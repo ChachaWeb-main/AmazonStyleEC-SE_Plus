@@ -17,7 +17,7 @@
 
     <hr>
 
-    <form method="POST" action="/dashboard/products/{{ $product->id }}" class="mb-5">
+    <form method="POST" action="/dashboard/products/{{ $product->id }}" class="mb-5" enctype="multipart/form-data">
         {{ csrf_field() }}
         <input type="hidden" name="_method" value="PUT">
         <div class="form-inline mt-4 mb-4 row">
@@ -40,22 +40,35 @@
                 @endforeach
             </select>
         </div>
+        <div class="form-inline mt-4 mb-4 row">
+            <label class="col-2 d-flex justify-content-start">画像</label>
+            @if ($product->image !== null)
+            <img src="{{ asset('storage/products/'.$product->image) }}" id="product-image-preview" class="img-fluid w-25">
+            @else
+            <img src="#" id="product-image-preview">
+            @endif
+            <div class="d-flex flex-column ml-2">
+                <small class="mb-3">600px×600px推奨。<br>商品の魅力が伝わる画像をアップロードして下さい。</small>
+                <label for="product-image" class="btn mymazon-submit-button">画像を選択</label>
+                <input type="file" name="image" id="product-image" onChange="handleImage(this.files)" style="display: none;">
+            </div>
+        </div>
         {{-- おすすめ商品かどうかを選択するチェックボックス --}}
         <div class="form-inline mt-4 mb-4 row">
             <label for="product-price" class="col-2 d-flex justify-content-start">オススメ?</label>
             @if ($product->recommend_flag)
-            <input type="checkbox" name="recommend" id="product-recommend" class="samazon-check-box" checked>
+            <input type="checkbox" name="recommend" id="product-recommend" class="mymazon-check-box" checked>
             @else
-            <input type="checkbox" name="recommend" id="product-recommend" class="samazon-check-box">
+            <input type="checkbox" name="recommend" id="product-recommend" class="mymazon-check-box">
             @endif
         </div>
         {{-- 送料の有無によって表示を切り替え。すでに送料が「有」に設定されている場合は、チェック済みに --}}
         <div class="form-inline mt-4 mb-4 row">
             <label for="product-carriage" class="col-2 d-flex justify-content-start">送料</label>
             @if ($product->carriage_flag)
-            <input type="checkbox" name="carriage" id="product-carriage" class="samazon-check-box" checked>
+            <input type="checkbox" name="carriage" id="product-carriage" class="mymazon-check-box" checked>
             @else
-            <input type="checkbox" name="carriage" id="product-carriage" class="samazon-check-box">
+            <input type="checkbox" name="carriage" id="product-carriage" class="mymazon-check-box">
             @endif
         </div>
         <div class="form-inline mt-4 mb-4 row">
@@ -71,4 +84,16 @@
         <a href="/dashboard/products">商品一覧に戻る</a>
     </div>
 </div>
+
+<script type="text/javascript">
+    function handleImage(image) {
+        let reader = new FileReader();
+        reader.onload = function() {
+            let imagePreview = document.getElementById("product-image-preview");
+            imagePreview.src = reader.result;
+        }
+        console.log(image);
+        reader.readAsDataURL(image[0]);
+    }
+</script>
 @endsection 

@@ -97,7 +97,9 @@ a:hover {
   text-decoration: none;
 }
 
-/* login */
+/************ 
+  login 
+*************/
 .mymazon-login-input {
   border-radius: 2px;
   border: solid 1px #b2b2b2;
@@ -132,11 +134,16 @@ a:hover {
 }
 
 
-/* create */
 /**/
+/*************** 
+  create
+***************/
 
 
-/* show */
+
+/***************
+  show 
+***************/
 .mymazon-submit-button {
   font-family: YuGo;
   font-size: 15px;
@@ -175,7 +182,9 @@ a:hover {
 }
 
 
-/* header */
+/***************
+  header
+***************/
 .mymazon-header-container {
   box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1);
   background-color: #ffffff;
@@ -202,7 +211,9 @@ a:hover {
 }
 
 
-/* favorite */
+/*************** 
+  favorite
+***************/
 .mymazon-favorite-button {
   border-radius: 2px;
   border: solid 0.5px #FF0033;
@@ -232,7 +243,9 @@ a:hover {
 }
 
 
-/* review */
+/**************
+  review
+**************/
 .review-score-color {
   color: #FFCC66;
 }
@@ -242,7 +255,9 @@ a:hover {
 }
 
 
-/* sidebar */
+/*************
+  sidebar
+*************/
 /**/
 .sidebar-category-name {
   border-top: 1px solid #d5dbdb;
@@ -264,7 +279,9 @@ a:hover {
 }
 
 
-/* Top Page */
+/**************
+  Top Page
+**************/
 /**/
 .web-index-item {
   color: #505050;/*文字色*/
@@ -285,7 +302,9 @@ a:hover {
 
 
 /**/
-/* mypage */
+/**************
+  mypage
+***************/
 .myp-icon {
   color: #555555;
 }
@@ -295,25 +314,33 @@ a:hover {
 }
 
 /**/
-/* carts */
+/**************
+  carts
+***************/
 .carts-icon {
   color: #3399FF;
 }
 
-/* user */
+/***************
+  user
+***************/
 .user-edit-label {
   cursor: pointer;
   cursor: hand;
 }
 
-/* Unsubscribed 退会 */
+/**********************
+  Unsubscribed 退会
+**********************/
 .mymazon-delete-submit-button {
   border-radius: 2px;
   background-color: #d94b0e;
 }
 
 
-/* Dashbord 管理画面  */
+/*********************
+  Dashbord 管理画面
+*********************/
 .dashboard-edit-link {
   font-family: YuGo;
   font-size: 14px;
@@ -350,7 +377,9 @@ a:hover {
 }
 
 /**/
-/* -------- button ボタン ----------*/
+/*****************
+  button ボタン
+*****************/
 .btn {
   box-shadow: 0 2.5px #aaaaaa;
   opacity: 0.8;
